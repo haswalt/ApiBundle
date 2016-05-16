@@ -12,7 +12,12 @@
         }
     ],
     "require": {
-        "php": "^5.5.9|~7.0"
+        "php": "^5.5.9|~7.0",
+        "jms/serializer-bundle": "^1.1"
+    },
+    "suggest": {
+        "nelmio/cors-bundle": "^1.4",
+        "nelmio/api-doc-bundle": "^2.12"
     },
     "autoload": {
         "psr-4": {
