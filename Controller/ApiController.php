@@ -1,6 +1,6 @@
 <?php
 
-namespace ApiBundle\Controller;
+namespace Haswalt\ApiBundle\Controller;
 
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
