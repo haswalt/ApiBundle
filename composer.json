@@ -1,0 +1,27 @@
+{
+    "name": "haswalt/simple-api-bundle",
+    "type": "symfony-bundle",
+    "description": "",
+    "keywords":["rest", "json", "api"],
+    "homepage": "http://github.com/haswalt/simple-api-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Harry Walter",
+            "homepage": "http://harrywalter.co.uk"
+        }
+    ],
+    "require": {
+        "php": "^5.5.9|~7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Haswalt\\ApiBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
