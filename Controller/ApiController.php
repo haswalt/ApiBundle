@@ -26,9 +26,9 @@ abstract class ApiController extends Controller
      * @param  integer $statusCode
      * @return Response
      */
-    public function locationResponse($route, $id, $statusCode = 201)
+    public function locationResponse($route, $params = [], $statusCode = 201)
     {
-        $url = $this->generateUrl($route, ['id' => $id], UrlGeneratorInterface::ABSOLUTE_URL);
+        $url = $this->generateUrl($route, $params, UrlGeneratorInterface::ABSOLUTE_URL);
 
         $response = new Response(null, $statusCode);
         $response->headers->set('Location', $url);
