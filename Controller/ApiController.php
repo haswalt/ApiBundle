@@ -44,11 +44,14 @@ abstract class ApiController extends Controller
      * @param  integer $statusCode
      * @return Response
      */
-    public function jsonResponse($data, $statusCode = 200, $groups = ['default'])
+    public function jsonResponse($data, $statusCode = 200, $groups = [])
     {
         $serializer = $this->get('jms_serializer');
         $context = new SerializationContext();
-        $context->setGroups($groups);
+
+        if (!empty($groups)) {
+            $context->setGroups($groups);
+        }
 
         $json = $serializer->serialize($data, 'json', $context);
 
