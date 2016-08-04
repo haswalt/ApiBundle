@@ -10,6 +10,7 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Validator\ConstraintViolationList;
+use JMS\Serializer\SerializationContext;
 
 /**
  * Description of ApiController
@@ -43,11 +44,13 @@ abstract class ApiController extends Controller
      * @param  integer $statusCode
      * @return Response
      */
-    public function jsonResponse($data, $statusCode = 200)
+    public function jsonResponse($data, $statusCode = 200, $groups = ['default'])
     {
         $serializer = $this->get('jms_serializer');
+        $context = new SerializationContext();
+        $context->setGroups($groups);
 
-        $json = $serializer->serialize($data, 'json');
+        $json = $serializer->serialize($data, 'json', $context);
 
         return new Response(
             $json,
