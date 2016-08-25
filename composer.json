@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "",
     "keywords":["rest", "json", "api"],
-    "homepage": "http://github.com/haswalt/simple-api-bundle",
+    "homepage": "http://github.com/haswalt/ApiBundle",
     "license": "MIT",
     "authors": [
         {
