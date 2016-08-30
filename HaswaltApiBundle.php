@@ -4,6 +4,6 @@ namespace Haswalt\ApiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ApiBundle extends Bundle
+class HaswaltApiBundle extends Bundle
 {
 }
