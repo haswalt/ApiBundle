@@ -78,7 +78,9 @@ abstract class ApiController extends Controller
             $errors[$violation->getPropertyPath()] = $violation->getMessage();
         }
 
-        return $this->jsonResponse($errors, 400);
+        return $this->jsonResponse([
+            "errors" => $errors
+        ], 400);
     }
 
     /**
