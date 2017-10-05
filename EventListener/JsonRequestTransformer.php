@@ -2,6 +2,7 @@
 
 namespace Haswalt\ApiBundle\EventListener;
 
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
@@ -10,6 +11,10 @@ class JsonRequestTransformer
 {
     public function onKernelRequest(GetResponseEvent $event)
     {
+        if (HttpKernelInterface::MASTER_REQUEST !== $event->getRequestType()) {
+            return;
+        }
+        
         $request = $event->getRequest();
         $content = $request->getContent();
 
